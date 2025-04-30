@@ -60,3 +60,74 @@ The project uses the following technologies:
 6. Redis: used for caching and session management.
 7. Docker: Containerization tool for consistent development and deployment environements.
 8. CI/CD pipelines: Automated pipelines for testing and deploying code changes.
+
+## Database Design
+The following are the entities, fields and relationships.
+
+### 1. Users
+- **Fields**:
+  - `user_id`: Unique identifier for the user
+  - `name`: Name of the user
+  - `email`: Email address
+  - `phone`: Contact number
+- **Relationships**:
+  - Can have multiple bookings
+  - Can own multiple properties (shared ownership possible)
+
+### 2. Properties
+- **Fields**:
+  - `property_id`: Unique identifier for the property
+  - `address`: Location of the property
+  - `type`: Type of property (e.g., apartment, house)
+  - `owner_ids`: List of user IDs owning the property
+- **Relationships**:
+  - Associated with multiple bookings
+
+### 3. Bookings
+- **Fields**:
+  - `booking_id`: Unique identifier for the booking
+  - `user_id`: ID of the user who made the booking
+  - `property_id`: ID of the booked property
+  - `date`: Date of the booking
+  - `status`: Booking status (e.g., confirmed, canceled)
+- **Relationships**:
+  - Linked to one user
+  - Linked to one property
+
+### 4. Reviews
+- **Fields**:
+  - `review_id`: Unique identifier for the review
+  - `user_id`: ID of the user who left the review
+  - `property_id`: ID of the property being reviewed
+  - `rating`: Numeric rating (e.g., 1–5 stars)
+  - `comments`: User's feedback
+- **Relationships**:
+  - Posted by one user
+  - Associated with one property
+
+### 5. Payments
+- **Fields**:
+  - `payment_id`: Unique identifier for the payment
+  - `booking_id`: ID of the booking tied to the payment
+  - `amount`: Payment amount
+  - `payment_date`: Date of payment
+  - `method`: Payment method (e.g., credit card, PayPal)
+- **Relationships**:
+  - Linked to one booking
+
+ ## Feature Breakdown
+### 1. User Management
+Handles user registration, login, and profile management. This feature ensures a secure and personalized experience by allowing users to manage their accounts and access tailored functionalities with ease.
+
+### 2. Property Management
+Enables users to list, update, and manage properties. This feature supports co-ownership, allowing multiple users to share property ownership, and helps property owners showcase their offerings effectively.
+
+### 3. Booking System
+Facilitates the creation, management, and tracking of bookings. Users can reserve properties, view booking statuses, and manage their schedules seamlessly through this streamlined system.
+
+### 4. Review System
+Allows users to leave feedback and rate properties. By building trust through transparency, this feature helps potential users make informed decisions based on previous reviews and ratings.
+
+### 5. Payment Processing
+Handles secure transactions for bookings. It supports multiple payment methods, ensures reliable payment processing, and enhances user confidence with its seamless integration and ease of use.
+
