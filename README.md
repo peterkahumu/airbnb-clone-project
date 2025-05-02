@@ -131,3 +131,29 @@ Allows users to leave feedback and rate properties. By building trust through tr
 ### 5. Payment Processing
 Handles secure transactions for bookings. It supports multiple payment methods, ensures reliable payment processing, and enhances user confidence with its seamless integration and ease of use.
 
+## API Security Overview
+The folowing security measure will be implemented in the project:
+1. Use JWT tokens to authenticate the user. Enhances simplified set ups, enhance security and standard compliance.
+2. Use role-based access control for simplified access management, reduced errors, improves security, and enhanced scalability.
+3. Using 2-factor authentication of credit cards and when users want to make payments. This will  help reduce fraud cases and enhance secure payments.
+4. Protect routes to prevent unauthorized users from accessing them.
+
+
+## CI/CD Pipeline
+
+CI/CD (Continuous Integration and Continuous Deployment) pipelines automate the process of building, testing, and deploying code. They ensure that every code change is automatically validated and delivered efficiently, reducing human error and speeding up delivery cycles.
+
+For this project, CI/CD pipelines help:
+
+* Catch bugs early through automated testing.
+* Maintain code quality with linting and formatting checks.
+* Deploy updates quickly and consistently with minimal downtime.
+* Streamline collaboration by automating repetitive tasks.
+
+### Tools Used
+
+* **GitHub Actions**: Automates testing, linting, and deployment workflows.
+* **Docker**: Ensures consistent environments across development, testing, and production.
+* **Docker Compose**: Manages multi-container setups for local and staging environments.
+
+
